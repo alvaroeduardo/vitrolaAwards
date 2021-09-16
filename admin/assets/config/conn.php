@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     define('SERVIDOR', 'localhost');
     define('USUARIO',  'root');
     define('SENHA',    'root');
@@ -16,4 +18,8 @@
         header('Location: ../../../assets/modules/manu.html');
     }
 
-    
+    // VERIFICA SE O USUÁRIO ESTÁ LOGADO
+    if(!$_SESSION['nickname']){
+        header('Location: ../../../login.php');
+        exit();
+    }
