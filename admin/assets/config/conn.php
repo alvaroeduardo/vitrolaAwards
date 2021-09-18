@@ -17,9 +17,3 @@
     if($valorManu["manu"] == 'true'){
         header('Location: ../../../assets/modules/manu.html');
     }
-
-    // VERIFICA SE O USUÁRIO ESTÁ LOGADO
-    if(!$_SESSION['nickname']){
-        header('Location: ../../../login.php');
-        exit();
-    }

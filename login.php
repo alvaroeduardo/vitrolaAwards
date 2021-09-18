@@ -13,15 +13,15 @@
     </head>
     <body>
         
-        <main class="login_box">
-            <img src="https://imgur.com/X5mCRsv.png">
-
+        <main>
             <form action="./admin/assets/config/functions/login.php" method="post">
-                <label for="nickname">Nick:</label>
-                <input type="text" placeholder="Enter your nickname" name="nickname">
+                <img src="./assets/img/logo_white.svg">
+                
+                <label for="">Nickname:</label>
+                <input type="text" placeholder="Insert your nickname" name="nickname">
 
-                <label for="password">Password:</label>
-                <input type="password" placeholder="Enter your password" name="password">
+                <label for="">Password:</label>
+                <input type="password" placeholder="Insert your password" name="password">
 
                 <button type="submit">LOGIN</button>
             </form>
