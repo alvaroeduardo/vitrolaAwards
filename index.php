@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Vitrola Awards • Hello <?php echo $_SESSION['nickname']; ?></title>
         <link rel="stylesheet" href="./assets/style/index.css">
+        
     </head>
     <body>
         <main>
@@ -20,15 +21,49 @@
                 <h1>Categoria</h1>
             </header>
             <form action="" method="post">
-                <section id="ctgr_01">
-                    <div class="psc_01">
-
+                <!-- <section id="ctgr_01" class="ctgr">
+                    <div id="indc_01" class="indic">
+                        <img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=png&user=ferrazmatheus&direction=2&head_direction=3&size=l&gesture=sml&action=std,wav" alt="">
                     </div>
-                </section>
-            
+                    <footer>
+                        <button>Next</button>
+                    </footer>
+                </section> -->
 
+                <?php
+                    // CATEGORIAS
+                    $catQuery = "SELECT * FROM categorias";
+                    $catResult = mysqli_query($conn, $catQuery);
 
+                    // INDICAÇÕES
+                    $indicQuery = "SELECT * FROM indicacoes INNER JOIN categorias ON (ctgr = id_ctgr)";
+                    $indicResult = mysqli_query($conn, $indicQuery);
+
+                    //INDICADOS
+                    $indicadoQuery = "SELECT * FROM indicados INNER JOIN indicacoes ON (indic = id_indic)";
+                    $indicadoResult = mysqli_query($conn, $indicadoQuery);
+
+                    while($row_cat = mysqli_fetch_assoc($catResult)){
+                        echo "<section id='ctgr_". $row_cat['id_ctgr'] ."' class='ctgr'>";
+
+                        while($row_indic = mysqli_fetch_assoc($indicResult)){
+                            echo "<div id='indc_". $row_indic['ctgr'] ."' class='indic'>";
+                            
+                                while($row_indicado = mysqli_fetch_assoc($indicadoResult)){
+                                    echo "Nome:",$row_indicado['name'];
+                                }
+
+                            echo "</div>";
+                        }
+
+                        echo "</section>";
+                    }
+                ?>
+
+                
             </form>
         </main>
+
+        <script type="text/javascript" src="./assets/js/categorias.js"></script>
     </body>
 </html>
