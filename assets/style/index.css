@@ -24,6 +24,8 @@ main header{
 form{
     width: 100%;
     height: auto;
+    max-height: 100%;
+    overflow: auto;
     background-color: white;
     border-radius: .7rem;
 }
@@ -34,7 +36,8 @@ form{
 }
 
 .indic{
-    background-color: red;
+    color: black;
     margin: 1rem;
     border-radius: 5px;
+    width: 100%;
 }
