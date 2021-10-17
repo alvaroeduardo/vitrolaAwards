@@ -60,6 +60,24 @@
 
                         if($nasc == "hhbr"){
                             return "https://www.habbo". $hhbr ."/habbo-imaging/avatarimage?img_format=png&user=". $name ."&direction=2&head_direction=3&size=l&gesture=sml&action=std,wav&frame=3";
+                        } elseif ($nasc = "hhde") {
+                            return "https://www.habbo". $hhde ."/habbo-imaging/avatarimage?img_format=png&user=". $name ."&direction=2&head_direction=3&size=l&gesture=sml&action=std,wav&frame=3";
+                        } elseif ($nasc = "hhes") {
+                            return "https://www.habbo". $hhes ."/habbo-imaging/avatarimage?img_format=png&user=". $name ."&direction=2&head_direction=3&size=l&gesture=sml&action=std,wav&frame=3";
+                        } elseif ($nasc = "hhfi") {
+                            return "https://www.habbo". $hhfi ."/habbo-imaging/avatarimage?img_format=png&user=". $name ."&direction=2&head_direction=3&size=l&gesture=sml&action=std,wav&frame=3";
+                        } elseif ($nasc = "hhfr") {
+                            return "https://www.habbo". $hhfr ."/habbo-imaging/avatarimage?img_format=png&user=". $name ."&direction=2&head_direction=3&size=l&gesture=sml&action=std,wav&frame=3";
+                        } elseif ($nasc = "hhnl") {
+                            return "https://www.habbo". $hhnl ."/habbo-imaging/avatarimage?img_format=png&user=". $name ."&direction=2&head_direction=3&size=l&gesture=sml&action=std,wav&frame=3";
+                        } elseif ($nasc = "hhus") {
+                            return "https://www.habbo". $hhus ."/habbo-imaging/avatarimage?img_format=png&user=". $name ."&direction=2&head_direction=3&size=l&gesture=sml&action=std,wav&frame=3";
+                        } elseif ($nasc = "hhit") {
+                            return "https://www.habbo". $hhit ."/habbo-imaging/avatarimage?img_format=png&user=". $name ."&direction=2&head_direction=3&size=l&gesture=sml&action=std,wav&frame=3";
+                        } elseif ($nasc = "hhtr") {
+                            return "https://www.habbo". $hhtr ."/habbo-imaging/avatarimage?img_format=png&user=". $name ."&direction=2&head_direction=3&size=l&gesture=sml&action=std,wav&frame=3";
+                        } else {
+                            return "ERROR";
                         }
 
                     }
@@ -72,21 +90,22 @@
                                 echo "<h2>". $row_indic['indic_name'] ."</h2>";
                                 echo "<hr></hr>";
 
-                                while($row_indicado = mysqli_fetch_assoc($indicadoResult)){
-                                    echo "<div class='indicado'>";
-                                    echo "<img src='". imgUser($row_indicado['nasc'], $row_indicado['name']) ."'>";
+                            while($row_indicado = mysqli_fetch_assoc($indicadoResult)){
+                                echo "<div class='indicado'>";
+                                echo "<img src='". imgUser($row_indicado['nasc'], $row_indicado['name']) ."'/>";
 
-                                    echo "<input type='radio' value='". $row_indicado['name'] ."' name='". $row_indicado['name'] ."'>". $row_indicado['name'] ."</input>";
+                                echo "<input type='radio' value='". $row_indicado['name'] ."' name='". $row_indicado['name'] ."'>". $row_indicado['name'] ."</input>";
 
-                                    echo "</div>";
-                                }
+                                echo "</div>";
+                            }
                             echo "</div>";
                         }
 
                         echo "</section>";
                     }
-                ?>
 
+                    
+                ?>
                 
             </form>
         </main>
